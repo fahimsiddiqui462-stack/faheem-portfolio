@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière Beauty Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:#0d0a08;color:#f5ede6;overflow-x:hidden;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;position:fixed;width:100%;top:0;z-index:100;background:rgba(13,10,8,0.85);backdrop-filter:blur(8px);border-bottom:0.5px solid rgba(212,168,120,0.15);}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#d4a878;letter-spacing:2px;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:#c9b89a;text-decoration:none;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:#d4a878;}
+.nav-btn{background:transparent;border:0.5px solid #d4a878;color:#d4a878;padding:0.5rem 1.4rem;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
+.nav-btn:hover{background:#d4a878;color:#0d0a08;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 3rem;padding-top:5rem;gap:3rem;}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:#d4a878;margin-bottom:1.2rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:3.8rem;line-height:1.15;margin-bottom:1.5rem;color:#f5ede6;}
+.hero-title em{font-style:italic;color:#d4a878;}
+.hero-sub{color:#9e8e7e;font-size:1rem;line-height:1.8;font-weight:300;max-width:400px;margin-bottom:2.5rem;}
+.btn-group{display:flex;gap:1rem;align-items:center;}
+.btn-primary{background:#d4a878;color:#0d0a08;border:none;padding:0.9rem 2.2rem;font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-weight:500;}
+.btn-secondary{background:transparent;border:none;color:#c9b89a;font-size:0.85rem;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;gap:0.5rem;}
+.btn-secondary::after{content:'→';transition:transform 0.3s;}
+.btn-secondary:hover::after{transform:translateX(4px);}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
+.hero-img-frame{width:340px;height:480px;background:linear-gradient(145deg,#2a1f14,#1a1208);border:0.5px solid rgba(212,168,120,0.3);position:relative;overflow:hidden;}
+.hero-img-inner{width:100%;height:100%;background:linear-gradient(160deg,#3d2b1a 0%,#1e1208 60%,#0d0a08 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;}
+.hero-img-deco{position:absolute;top:2rem;right:2rem;width:60px;height:60px;border:0.5px solid rgba(212,168,120,0.4);display:flex;align-items:center;justify-content:center;color:#d4a878;font-size:1.5rem;}
+.circle-deco{position:absolute;width:200px;height:200px;border-radius:50%;border:0.5px solid rgba(212,168,120,0.1);top:-50px;left:-50px;}
+.circle-deco2{position:absolute;width:120px;height:120px;border-radius:50%;border:0.5px solid rgba(212,168,120,0.15);bottom:60px;right:-30px;}
+.hero-img-tag{background:rgba(212,168,120,0.1);border:0.5px solid rgba(212,168,120,0.3);padding:1rem 1.2rem;}
+.hero-img-tag p{font-size:0.75rem;color:#d4a878;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.3rem;}
+.hero-img-tag h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#f5ede6;}
+.floating-badge{position:absolute;top:3rem;left:-2rem;background:#d4a878;color:#0d0a08;padding:0.8rem 1.2rem;font-size:0.75rem;font-weight:500;letter-spacing:1px;}
+.floating-badge span{display:block;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);padding:3rem;border-top:0.5px solid rgba(212,168,120,0.15);border-bottom:0.5px solid rgba(212,168,120,0.15);}
+.stat{text-align:center;padding:1.5rem;}
+.stat:not(:last-child){border-right:0.5px solid rgba(212,168,120,0.15);}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#d4a878;margin-bottom:0.3rem;}
+.stat-label{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#9e8e7e;}
+.services{padding:5rem 3rem;}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
+.section-eyebrow{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:#d4a878;margin-bottom:0.8rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:2.5rem;color:#f5ede6;}
+.section-title em{font-style:italic;color:#d4a878;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(212,168,120,0.1);}
+.service-card{background:#0d0a08;padding:2.5rem 2rem;transition:background 0.3s;}
+.service-card:hover{background:#140e09;}
+.service-icon{width:44px;height:44px;border:0.5px solid rgba(212,168,120,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.2rem;color:#d4a878;}
+.service-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#f5ede6;margin-bottom:0.8rem;}
+.service-desc{font-size:0.88rem;color:#9e8e7e;line-height:1.7;font-weight:300;margin-bottom:1.5rem;}
+.service-price{font-size:0.75rem;letter-spacing:2px;color:#d4a878;text-transform:uppercase;}
+.testimonial{padding:5rem 3rem;background:#0a0705;border-top:0.5px solid rgba(212,168,120,0.1);}
+.testimonial-inner{max-width:700px;margin:0 auto;text-align:center;}
+.quote-mark{font-family:'Playfair Display',serif;font-size:5rem;color:rgba(212,168,120,0.2);line-height:0.5;margin-bottom:1.5rem;}
+.quote-text{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#c9b89a;line-height:1.7;margin-bottom:1.5rem;}
+.quote-author{font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:#d4a878;}
+.cta{padding:5rem 3rem;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;border-top:0.5px solid rgba(212,168,120,0.1);}
+.cta-title{font-family:'Playfair Display',serif;font-size:2.8rem;color:#f5ede6;line-height:1.2;}
+.cta-title em{font-style:italic;color:#d4a878;}
+.cta-right{display:flex;flex-direction:column;gap:1rem;}
+.cta-input{background:transparent;border:0.5px solid rgba(212,168,120,0.3);padding:1rem 1.2rem;color:#f5ede6;font-family:'Jost',sans-serif;font-size:0.9rem;width:100%;}
+.cta-input::placeholder{color:#5a4e43;}
+footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid rgba(212,168,120,0.1);}
+footer p{font-size:0.78rem;color:#5a4e43;letter-spacing:1px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:#d4a878;letter-spacing:2px;}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:1.5rem;padding-top:6rem;text-align:center;}
+  .hero-title{font-size:2.5rem;}
+  .hero-sub{max-width:100%;}
+  .btn-group{justify-content:center;}
+  .hero-visual{display:none;}
+  .stats{grid-template-columns:1fr;padding:2rem 1.5rem;}
+  .stat:not(:last-child){border-right:none;border-bottom:0.5px solid rgba(212,168,120,0.15);}
+  .services{padding:3rem 1.5rem;}
+  .services-grid{grid-template-columns:1fr;}
+  .cta{grid-template-columns:1fr;padding:3rem 1.5rem;}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">LUMIÈRE</div>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-btn">Book Now</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Luxury Beauty Studio</p>
+    <h1 class="hero-title">Where beauty<br>becomes <em>art</em></h1>
+    <p class="hero-sub">Experience the finest in hair, skin, and beauty treatments. Our expert stylists craft looks tailored exclusively for you.</p>
+    <div class="btn-group">
+      <button class="btn-primary">Book Appointment</button>
+      <button class="btn-secondary">View Services</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-badge">
+      <span>8+</span>
+      Years of Excellence
+    </div>
+    <div class="hero-img-frame">
+      <div class="circle-deco"></div>
+      <div class="circle-deco2"></div>
+      <div class="hero-img-deco">✦</div>
+      <div class="hero-img-inner">
+        <div class="hero-img-tag">
+          <p>Featured Service</p>
+          <h3>Signature Hair Treatment</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-num">2,400+</div>
+    <div class="stat-label">Happy Clients</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">18</div>
+    <div class="stat-label">Expert Stylists</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">98%</div>
+    <div class="stat-label">Satisfaction Rate</div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">What we offer</p>
+      <h2 class="section-title">Our <em>Signature</em><br>Services</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✦</div>
+      <h3 class="service-name">Hair Styling</h3>
+      <p class="service-desc">From sleek blowouts to intricate updos — we create styles that complement your unique personality.</p>
+      <p class="service-price">Starting from Rs. 2,500</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">◈</div>
+      <h3 class="service-name">Color & Highlights</h3>
+      <p class="service-desc">Balayage, ombre, full color — our colorists use premium products to achieve your dream look.</p>
+      <p class="service-price">Starting from Rs. 5,000</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">◇</div>
+      <h3 class="service-name">Skin Treatments</h3>
+      <p class="service-desc">Rejuvenating facials and skin therapies designed to restore your natural glow and radiance.</p>
+      <p class="service-price">Starting from Rs. 3,500</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">○</div>
+      <h3 class="service-name">Bridal Packages</h3>
+      <p class="service-desc">Complete bridal makeover packages for your most special day — from mehendi to reception.</p>
+      <p class="service-price">Starting from Rs. 25,000</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">▲</div>
+      <h3 class="service-name">Nail Art</h3>
+      <p class="service-desc">Intricate nail designs and gel treatments that make your hands as beautiful as you are.</p>
+      <p class="service-price">Starting from Rs. 1,500</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">◉</div>
+      <h3 class="service-name">Makeup Studio</h3>
+      <p class="service-desc">Professional makeup artistry for parties, shoots, events and everyday glam looks.</p>
+      <p class="service-price">Starting from Rs. 4,000</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="testimonial-inner">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">Lumière completely transformed my look for my wedding day. The team is professional, talented, and made me feel like royalty. I couldn't have asked for a better experience.</p>
+    <p class="quote-author">— Ayesha Khan, Bride 2024</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2 class="cta-title">Ready for your<br><em>transformation?</em></h2>
+  </div>
+  <div class="cta-right">
+    <input class="cta-input" type="text" placeholder="Your Name">
+    <input class="cta-input" type="text" placeholder="Phone Number">
+    <button class="btn-primary" style="width:100%;padding:1rem;">Book Your Appointment →</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">LUMIÈRE</div>
+  <p>© 2024 Lumière Beauty Studio · Hyderabad, Pakistan</p>
+  <p>+92 300 0000000</p>
+</footer>
+
+</body>
+</html>
