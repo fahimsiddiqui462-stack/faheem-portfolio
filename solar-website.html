@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovative Solar Solution</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+* { list-style-type:none; text-decoration:none !important; border:none; outline:none; margin:0; padding:0; box-sizing:border-box; }
+h1,h2,h3,h4,h5,h6 { margin-bottom:0 !important; }
+body { font-family:'Oswald',sans-serif; }
+
+/* NAV */
+.navbar-top { padding:12px 30px; border-bottom:1px solid #eee; }
+.logo-wrap { display:flex; align-items:center; gap:10px; }
+.logo-text { font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:800; color:#8ec640; letter-spacing:1px; }
+.logo-sub { color:#777; font-size:0.7rem; letter-spacing:1px; display:block; }
+.top-right { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.nav-row { display:flex; align-items:center; gap:0; list-style:none; }
+.nav-row li { border-right:2px solid #2c2c2c; padding:0 14px; line-height:1; }
+.nav-row li:last-child { border-right:none; }
+.nav-row li a, .nav-row li select { font-size:0.95rem; color:#2c2c2c; background:transparent; cursor:pointer; font-family:'Oswald',sans-serif; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80') center/cover no-repeat;
+    min-height:514px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:60px 20px;
+}
+.hero-section h2 { font-family:'Montserrat',sans-serif; font-size:3.8rem; color:#fff; font-weight:800; text-align:center; }
+.hero-section h2 span { background:#37b722; padding:0 8px; }
+.hero-section h3 { font-family:'Montserrat',sans-serif; background:#37b722; color:#fff; padding:4px 12px; font-size:1.5rem; text-align:center; }
+.hero-bottom { background:#000; color:#fff; font-family:'Montserrat',sans-serif; font-size:1.8rem; padding:10px 40px; margin-top:20px; text-align:center; }
+
+/* SECTION DIVIDER */
+.sec-divider {
+    background: repeating-linear-gradient(90deg,#e0e0e0 0,#e0e0e0 10px,transparent 10px,transparent 20px);
+    height:60px; border-top:2px solid #ccc; border-bottom:2px solid #ccc;
+    display:flex; align-items:center; justify-content:center; margin-top:3rem;
+}
+.sec-divider h2 { font-size:3rem; color:#2c2c2c; background:#fff; padding:0 16px; }
+
+/* SERVICES */
+.services-wrap { padding:3rem 0; }
+.box1 { background:#f0f0f0; border:6px solid #7f7f7f; padding:30px 20px; display:flex; flex-direction:column; align-items:center; min-height:420px; }
+.box1 h2 { color:#8ec640; font-size:2.2rem; text-align:center; }
+.icon-box { width:80px; height:80px; background:#8ec640; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; color:#fff; margin:16px 0; }
+.box1 p { font-family:Arial; font-size:0.85rem; color:#2c2c2c; line-height:1.6; text-align:justify; flex:1; margin:12px 0; }
+.an1 { width:200px; height:44px; background:#3b3b3b; color:#fff !important; font-size:1.4rem; display:flex; align-items:center; justify-content:center; border:2px solid #000 !important; border-radius:50px; transition:all 0.3s; cursor:pointer; }
+.an1:hover { color:#000 !important; background:transparent; }
+
+/* ABOUT */
+.about-img { width:100%; height:380px; object-fit:cover; border-radius:12px; }
+.sec-2 h2 { font-size:2.4rem; color:#2c2c2c; }
+.sec-2 h2 span { color:#8ec640; }
+.sec-2 p { font-family:Arial; font-size:1rem; color:#8b8b8b; text-align:justify; line-height:1.8; margin-top:16px; }
+
+/* GALLERY */
+.gallery-wrap { padding:3rem 0 4rem; }
+.gallery-img { width:200px; height:150px; object-fit:cover; border-radius:6px; }
+
+/* CLIENTS */
+.clients-wrap { padding:2rem 0 3rem; }
+.client-card { background:#f5f5f5; border:1px solid #ddd; border-radius:10px; width:160px; height:90px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
+.client-card i { font-size:1.8rem; color:#8ec640; }
+.client-card span { font-family:Arial; font-size:0.75rem; color:#555; font-weight:bold; letter-spacing:1px; }
+
+/* SUBSCRIBE */
+.subscribe-section {
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=1400&q=80') center/cover no-repeat;
+    min-height:420px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:40px 20px; margin-top:3rem;
+}
+.sub-title { background:rgba(0,0,0,0.4); padding:0 20px; }
+.sub-title h2 { font-size:3rem; color:#fff; }
+.sub-form { width:80%; max-width:800px; height:90px; background:#fff; border-radius:15px; overflow:hidden; display:flex; align-items:center; margin-top:40px; }
+.sub-form input { flex:1; padding:0 2rem; font-size:1.4rem; font-family:Arial; color:#9e9e9e; background:transparent; height:100%; }
+.sub-form input::placeholder { color:#9e9e9e; font-style:italic; }
+.sub-btn { width:240px; height:90px; background:#8ec640; color:#fff; font-size:1.6rem; font-family:'Oswald',sans-serif; display:flex; align-items:center; justify-content:center; flex-shrink:0; cursor:pointer; transition:background 0.3s; border-radius:0 15px 15px 0; }
+.sub-btn:hover { background:#37b722; }
+
+/* FOOTER */
+.footer-main { background:#3c3c3c; padding:40px 0; }
+.footer-logo-text { font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:800; color:#8ec640; }
+.footer-logo-sub { color:#aaa; font-size:0.75rem; letter-spacing:1px; }
+.footer-main h2 { font-size:1.8rem; color:#fff; }
+.footer-main p { font-family:Arial; font-size:1rem; color:#ddd; line-height:1.8; text-align:justify; margin-top:12px; }
+.footer-links { margin-top:30px; }
+.footer-links li a { font-size:1.3rem; color:#fff; display:block; padding:3px 0; }
+.footer-links li a:hover { color:#8ec640; text-decoration:underline !important; }
+.social-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.social-links li a i { width:60px; height:60px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6rem; color:#000; transition:all 0.3s; }
+.social-links li a i:hover { background:#8ec640; color:#fff; }
+
+/* BOTTOM BAR */
+.footer-bar { background:#282828; border-bottom:1px solid #f5f5f5; padding:12px 0; }
+.footer-bar p { font-family:Arial; font-size:1rem; color:#fff; padding:0 5px; display:inline-block; transition:all 1s; }
+.footer-bar p:hover { color:#000; background:#8ec640; }
+.footer-bar-links { display:flex; gap:30px; flex-wrap:wrap; }
+.footer-bar-links li a { font-size:1.1rem; color:#fff; }
+.footer-bar-links li a:hover { color:#8ec640; }
+
+/* RESPONSIVE */
+@media(max-width:991px){
+    .top-right { align-items:flex-start; margin-top:10px; }
+    .navbar-top { flex-direction:column; }
+    .hero-section h2 { font-size:2.2rem; }
+    .hero-section h3 { font-size:1.1rem; }
+    .hero-bottom { font-size:1.2rem; padding:8px 20px; }
+    .sec-divider h2 { font-size:2rem; }
+    .sub-title h2 { font-size:2rem; }
+    .about-img { height:260px; }
+    .sec-2 { margin-top:24px; }
+}
+@media(max-width:767px){
+    .navbar-top { padding:12px 16px; }
+    .logo-text { font-size:1.2rem; }
+    .nav-row { flex-wrap:wrap; gap:4px; }
+    .nav-row li { border-right:none; padding:2px 8px; }
+    .hero-section h2 { font-size:1.6rem; }
+    .hero-section h3 { font-size:0.95rem; }
+    .hero-bottom { font-size:1rem; padding:6px 14px; }
+    .sec-divider h2 { font-size:1.5rem; }
+    .box1 { min-height:auto; margin-bottom:20px; }
+    .gallery-img { width:150px; height:110px; }
+    .sub-form { width:98%; flex-direction:column; height:auto; border-radius:15px; }
+    .sub-btn { width:100%; height:60px; border-radius:0 0 15px 15px; font-size:1.2rem; }
+    .sub-form input { padding:16px; width:100%; }
+    .footer-bar-links { gap:12px; }
+    .social-links li a i { width:48px; height:48px; font-size:1.3rem; }
+    .client-card { width:130px; height:75px; }
+}
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar-top d-flex justify-content-between align-items-start flex-wrap">
+    <div class="logo-wrap">
+        <i class="fa-solid fa-sun" style="font-size:2.4rem;color:#8ec640;"></i>
+        <div>
+            <div class="logo-text">SOLARVISION</div>
+            <span class="logo-sub">GREEN ENERGY SOLUTIONS</span>
+        </div>
+    </div>
+    <div class="top-right">
+        <ul class="nav-row">
+            <li>
+                <select class="sel">
+                    <option selected disabled>Currency</option>
+                    <option>PKR</option><option>INR</option><option>AED</option>
+                </select>
+            </li>
+            <li>
+                <select class="sel">
+                    <option selected disabled>Country</option>
+                    <option>Pakistan</option><option>India</option><option>Iran</option>
+                </select>
+            </li>
+            <li>
+                <select class="sel">
+                    <option selected disabled>Language</option>
+                    <option>Urdu</option><option>Hindi</option><option>Arabic</option>
+                </select>
+            </li>
+            <li><a href="#">Sign in</a></li>
+        </ul>
+        <ul class="nav-row">
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Listing</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero-section">
+    <h2>INNOVATIVE <span>SOLAR</span> SOLUTION</h2>
+    <h2>FOR YOUR HOME</h2>
+    <h3 class="mt-2">Light Up With Solar &amp; Save Natural Resources</h3>
+    <div class="hero-bottom">FEEL FREE WITH GREEN VISION</div>
+</div>
+
+<!-- SERVICES -->
+<div class="sec-divider"><h2>Our Services</h2></div>
+<div class="container services-wrap">
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+            <div class="box1">
+                <h2>Consultation</h2>
+                <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+                <p>We provide expert solar consultation to help you choose the best energy solution for your home or business. Our team analyzes your energy needs and provides a custom plan tailored just for you.</p>
+                <a href="#" class="an1">View More</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="box1">
+                <h2>Installation</h2>
+                <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <p>Our certified technicians handle complete solar panel installation with precision and care. We ensure maximum efficiency and safety throughout the entire installation process at your property.</p>
+                <a href="#" class="an1">View More</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="box1">
+                <h2>Maintenance</h2>
+                <div class="icon-box"><i class="fa-solid fa-solar-panel"></i></div>
+                <p>Keep your solar system running at peak performance with our regular maintenance packages. We offer inspections, cleaning, and repairs to maximize your energy output and system lifespan.</p>
+                <a href="#" class="an1">View More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="sec-divider"><h2>About Company</h2></div>
+<div class="container py-5">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&q=80" alt="Solar Installation" class="about-img">
+        </div>
+        <div class="col-lg-6 sec-2">
+            <h2>Some Word About <span>Company Vision</span></h2>
+            <p>We are a leading solar energy company dedicated to bringing clean, affordable, and sustainable power to homes and businesses across Pakistan. Founded with a vision to reduce energy costs and carbon footprint, we have successfully installed solar solutions for hundreds of satisfied clients. Our team of certified engineers and technicians brings years of expertise to every project, ensuring the highest quality standards and long-term performance.</p>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="sec-divider"><h2>Projects</h2></div>
+<div class="container gallery-wrap">
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Project 1">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&q=80" alt="Project 2">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=400&q=80" alt="Project 3">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80" alt="Project 4">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=400&q=80" alt="Project 5">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&q=80" alt="Project 6">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80" alt="Project 7">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Project 8">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=400&q=80" alt="Project 9">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&q=80" alt="Project 10">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&q=80" alt="Project 11">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?w=400&q=80" alt="Project 12">
+    </div>
+</div>
+
+<!-- CLIENTS -->
+<div class="sec-divider"><h2>Our Clients</h2></div>
+<div class="container clients-wrap">
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+        <div class="client-card">
+            <i class="fa-solid fa-bolt"></i>
+            <span>POWERTECH</span>
+        </div>
+        <div class="client-card">
+            <i class="fa-solid fa-industry"></i>
+            <span>GREENWORKS</span>
+        </div>
+        <div class="client-card">
+            <i class="fa-solid fa-building"></i>
+            <span>ECOBUILDERS</span>
+        </div>
+        <div class="client-card">
+            <i class="fa-solid fa-leaf"></i>
+            <span>NATURECO</span>
+        </div>
+        <div class="client-card">
+            <i class="fa-solid fa-sun"></i>
+            <span>SUNGROUP</span>
+        </div>
+        <div class="client-card">
+            <i class="fa-solid fa-city"></i>
+            <span>URBANPAK</span>
+        </div>
+    </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div class="subscribe-section">
+    <div class="sub-title"><h2>Subscribe</h2></div>
+    <div class="sub-form">
+        <input type="email" placeholder="Enter Your Email">
+        <a href="#" class="sub-btn">Subscribe</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-main">
+    <div class="container">
+        <div class="row g-4 py-2">
+            <div class="col-lg-6 col-md-12">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-sun" style="font-size:2.2rem;color:#8ec640;"></i>
+                    <div>
+                        <div class="footer-logo-text">SOLARVISION</div>
+                        <div class="footer-logo-sub">GREEN ENERGY SOLUTIONS</div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h2>OUR MISSION</h2>
+                    <p>Our mission is to make clean solar energy accessible and affordable for every home and business in Pakistan. We are committed to reducing energy costs, protecting the environment, and building a sustainable future through innovative solar technology and exceptional service.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h2>Quick Links</h2>
+                <ul class="footer-links mt-2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h2>Social Links</h2>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="footer-bar">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <p>Copyright 2021 to 2025 &mdash; All Rights Reserved</p>
+            <ul class="footer-bar-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
